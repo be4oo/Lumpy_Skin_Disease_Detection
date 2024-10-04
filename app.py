@@ -72,5 +72,5 @@ st.sidebar.info(
 st.sidebar.header('About')
 st.sidebar.info(
     'This app predicts the likelihood of Lumpy Skin Disease based on various environmental '
-    'and population factors. It uses an Ensemble model trained on historical data.'
+    'and population factors. It uses an LightGBM model trained on historical data.'
 )
