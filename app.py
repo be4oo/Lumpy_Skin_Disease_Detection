@@ -5,7 +5,7 @@ import pickle
 import xgboost as xgb
 
 # Load the model
-with open('best_automl_model.pkl', 'rb') as file:
+with open('LightGBM_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 # Define your features
