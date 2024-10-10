@@ -10,10 +10,7 @@ with open('LightGBM_model.pkl', 'rb') as file:
 
 # Define your features
 features = [
-    'Longitude', 'Latitude', 'Cloud_Cover_Percentage', 'Diurnal_Temp_Range',
-    'Frost_Days', 'Evapotranspiration', 'Precipitation_Amount', 'Mean_Temp',
-    'Wet_Days_Count', 'elevation', 'Human_Population', 'Cattle_Population', 'vpd'
-]
+    'Cloud_Cover_Percentage', 'Precipitation_Amount', 'Mean_Temp']
 
 def process_input(input_data):
     # Add any preprocessing steps here if needed
@@ -28,12 +25,7 @@ st.header('Enter Environmental and Population Data')
 # Input fields
 input_data = {}
 for feature in features:
-    if feature in ['Longitude', 'Latitude']:
-        input_data[feature] = st.number_input(f'Enter {feature}', format='%.6f')
-    elif feature in ['Human_Population', 'Cattle_Population']:
-        input_data[feature] = st.number_input(f'Enter {feature}', min_value=0.0, format='%.6f')
-    else:
-        input_data[feature] = st.number_input(f'Enter {feature}', format='%.6f')
+    input_data[feature] = st.number_input(f'Enter {feature}', format='%.6f')
 
 # Predict button
 if st.button('Predict'):
@@ -72,5 +64,5 @@ st.sidebar.info(
 st.sidebar.header('About')
 st.sidebar.info(
     'This app predicts the likelihood of Lumpy Skin Disease based on various environmental '
-    'and population factors. It uses an LightGBM model trained on historical data.'
+    'and population factors.
 )
